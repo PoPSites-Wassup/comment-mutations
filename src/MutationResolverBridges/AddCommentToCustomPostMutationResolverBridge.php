@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\CommentMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
-use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoP\ComponentModel\MutationResolverBridges\AbstractComponentMutationResolverBridge;
+use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoPSchema\CommentMutations\MutationResolvers\AddCommentToCustomPostMutationResolver;
 use PoPSchema\CommentMutations\MutationResolvers\MutationInputProperties;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class AddCommentToCustomPostMutationResolverBridge extends AbstractComponentMutationResolverBridge
 {
     protected AddCommentToCustomPostMutationResolver $addCommentToCustomPostMutationResolver;
 
     #[Required]
-    public function autowireAddCommentToCustomPostMutationResolverBridge(
+    final public function autowireAddCommentToCustomPostMutationResolverBridge(
         AddCommentToCustomPostMutationResolver $addCommentToCustomPostMutationResolver,
     ): void {
         $this->addCommentToCustomPostMutationResolver = $addCommentToCustomPostMutationResolver;
